@@ -12,10 +12,7 @@ import java.util.UUID;
 @Table(name = "QUESTION", indexes = {
         @Index(name = "CONSTRAINT_INDEX_E", columnList = "SURVEY_ID")
 })
-public class Question {
-    @Id
-    @Column(name = "ID", nullable = false)
-    private UUID id;
+public class Question extends BaseEntity {
 
     @Column(name = "TEXT", nullable = false)
     private String text;
@@ -46,14 +43,6 @@ public class Question {
         answers.add(answer);
     }
 
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
     public String getText() {
         return text;
     }
@@ -68,18 +57,5 @@ public class Question {
 
     public void setSurvey(Survey survey) {
         this.survey = survey;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Question question = (Question) o;
-        return id != null && Objects.equals(id, question.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
     }
 }
