@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 @MappedSuperclass
-public class BaseEntity implements Serializable {
+public abstract class BaseEntity implements Serializable {
 
     @Id
     @Column(name = "ID", nullable = false)
