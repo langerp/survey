@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class SurveyApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void contextLoadsAndMigrationsAreValid() {
 	}
 
 }
