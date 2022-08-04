@@ -2,7 +2,7 @@ package com.example.survey.api;
 
 public interface Paths {
 
-    String PREFIX = "api/v1/";
+    String PREFIX = "/api/v1/";
 
     String SURVEYS = PREFIX + "surveys/";
 
