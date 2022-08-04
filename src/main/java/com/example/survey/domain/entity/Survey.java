@@ -1,4 +1,4 @@
-package com.example.survey.entity;
+package com.example.survey.domain.entity;
 
 import org.hibernate.Hibernate;
 
