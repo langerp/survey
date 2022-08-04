@@ -27,6 +27,17 @@ public class Question {
     @OneToMany(mappedBy = "question")
     private Set<Answer> answers = new LinkedHashSet<>();
 
+    @Column(name = "ACTIVE", nullable = false)
+    private Boolean active = true;
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
     public Set<Answer> getAnswers() {
         return answers;
     }
