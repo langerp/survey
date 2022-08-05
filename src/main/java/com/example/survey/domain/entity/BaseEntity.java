@@ -5,6 +5,7 @@ import org.hibernate.Hibernate;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;
@@ -16,12 +17,23 @@ public abstract class BaseEntity implements Serializable {
     @Column(name = "ID", nullable = false)
     private UUID id = UUID.randomUUID();
 
+    @Version
+    private Integer version;
+
     public UUID getId() {
         return id;
     }
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
     }
 
     @Override
